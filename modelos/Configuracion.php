@@ -213,11 +213,6 @@ class Configuracion
 
                 $hayArchivo = isset($files['logo']) && $files['logo']['error'] !== 4;
 
-                // Si NO hay archivo
-                if (!$hayArchivo) {
-                        $this->errores['logo'] = "Debe ingresar una imagen";
-                }
-
                 // Si sí hay archivo
                 if ($hayArchivo) {
 

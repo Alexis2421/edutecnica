@@ -67,9 +67,10 @@ class ControladorConfiguracion
                 }
 
                 Configuracion::actualizarConfiguracionGeneral($nombreInstitucion, $colorEncabezado, $facebook, $instagram, $tiktok, $rutaAGuardarBD, $id);
-
+                $_SESSION['mensaje'] = "Configuración general actualizada correctamente";
                 // *Redireccionando al formulario de editar
                 header("Location: ./?controlador=configuracion&accion=editar");
+                exit;
             }
         }
 
@@ -93,9 +94,10 @@ class ControladorConfiguracion
                 return;
             }else{
                 Configuracion::actualizarConfiguracionContacto($nombreContacto, $direccion, $correo, $telefono, $id);
-
+                $_SESSION['mensaje'] = "Configuración de contacto actualizada correctamente";
                 // *Redireccionando al formulario de editar
                 header("Location: ./?controlador=configuracion&accion=editar");
+                exit;
             }
 
           

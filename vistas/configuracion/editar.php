@@ -1,5 +1,13 @@
 <div class="row">
-
+    <?php if (isset($_SESSION['mensaje'])) { ?>
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+            <?php
+            echo $_SESSION['mensaje'];
+            unset($_SESSION['mensaje']);
+            ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php   } ?>
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">Formulario de la Configuración General</div>
@@ -42,7 +50,7 @@
                             class="form-control"
                             name="color_encabezado"
                             id="color-encabezado"
-                            value="<?php echo $datosConfiguracion->getColorEncabezado() ?>"
+                            value="<?php echo isset($_POST['color_encabezado']) ? $_POST['color_encabezado'] : $datosConfiguracion->getColorEncabezado(); ?>"
                             aria-describedby="helpId"
                             placeholder="" />
 
@@ -111,9 +119,9 @@
                                 id="logo"
                                 placeholder=""
                                 aria-describedby="fileHelpId" />
-                            <?php if (isset($errores['nombre_institucion'])) { ?>
+                            <?php if (isset($errores['logo'])) { ?>
                                 <p class="text-danger">
-                                    <?php echo $errores['nombre_institucion'] ?>
+                                    <?php echo $errores['logo'] ?>
                                 </p>
                             <?php } ?>
                         <?php } else { ?>
@@ -128,13 +136,12 @@
                                     id="logo"
                                     placeholder=""
                                     aria-describedby="fileHelpId" />
-                                <?php if (isset($errores['nombre_institucion'])) { ?>
+                                <?php if (isset($errores['logo'])) { ?>
                                     <p class="text-danger">
-                                        <?php echo $errores['nombre_institucion'] ?>
+                                        <?php echo $errores['logo'] ?>
                                     </p>
                                 <?php } ?>
                             </div>
-
                         <?php } ?>
                     </div>
                     <div class="mb-3 py-2">
@@ -164,7 +171,6 @@
             <div class="card-body">
                 <form action="" method="post">
                     <div class="mb-3">
-                        <label for="" class="form-label">ID</label>
                         <input
                             type="text"
                             class="form-control"
@@ -174,7 +180,7 @@
                             hidden
                             aria-describedby="helpId"
                             placeholder="" />
-                        <small id="helpId" class="form-text text-body-secondary">Help text</small>
+                        
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Nombre de Contacto</label>
@@ -186,7 +192,6 @@
                             value="<?php echo $datosConfiguracion->getNombreContacto() ?>"
                             aria-describedby="helpId"
                             placeholder="" />
-                        <small id="helpId" class="form-text text-body-secondary">Help text</small>
                     </div>
 
                     <div class="mb-3">
@@ -200,7 +205,6 @@
                             value="<?php echo $datosConfiguracion->getDireccion() ?>"
                             aria-describedby="helpId"
                             placeholder="" />
-                        <small id="helpId" class="form-text text-body-secondary"></small>
                     </div>
                     <div class="mb-3">
 
@@ -215,7 +219,6 @@
                             value="<?php echo $datosConfiguracion->getTelefono() ?>"
                             aria-describedby="helpId"
                             placeholder="" />
-                        <small id="helpId" class="form-text text-body-secondary">Help text</small>
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Correo</label>
@@ -227,7 +230,6 @@
                             value="<?php echo $datosConfiguracion->getCorreo() ?>"
                             aria-describedby="emailHelpId"
                             placeholder="abc@mail.com" />
-                        <small id="emailHelpId" class="form-text text-body-secondary">Help text</small>
                     </div>
                     <div class="mb-3 py-2">
                         <a
