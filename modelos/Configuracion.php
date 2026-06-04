@@ -250,13 +250,11 @@ class Configuracion
 
                 if (empty(trim($this->direccion))) {
                         $this->errores['direccion'] = "La dirección es Obligatoria";
-                } elseif (mb_strlen(trim($this->direccion)) < 20) {
-                        $this->errores['direccion'] = "La dirección debe tener como mínimo 20 carácteres";
-                }
+                } 
 
                 if (empty(trim($this->telefono))) {
                         $this->errores['telefono'] = "Debe ingresar un número telefónico";
-                } elseif (mb_strlen(trim($this->telefono)) <= 10) {
+                } elseif (mb_strlen(trim($this->telefono)) < 10) {
                         $this->errores['telefono'] = "El número telefónico debe tener 10 números";
                 }
 

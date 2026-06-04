@@ -93,7 +93,7 @@ class ControladorConfiguracion
                 include_once("vistas/configuracion/editar.php");
                 return;
             }else{
-                Configuracion::actualizarConfiguracionContacto($nombreContacto, $direccion, $correo, $telefono, $id);
+                Configuracion::actualizarConfiguracionContacto($nombreContacto, $direccion, $telefono, $correo,  $id);
                 $_SESSION['mensaje'] = "Configuración de contacto actualizada correctamente";
                 // *Redireccionando al formulario de editar
                 header("Location: ./?controlador=configuracion&accion=editar");

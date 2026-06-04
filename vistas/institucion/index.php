@@ -45,7 +45,7 @@
           <p class="home__description">
             <?php echo $registroInicio->getDescripcion() ?>
           </p>
-          <a href="" class="home__link">Ver Programas</a>
+          <a href="#program" target="_blank" class="home__link">Ver Programas</a>
         </div>
       </div>
     </section>
@@ -85,19 +85,21 @@
         </div>
         <div class="program__list">
           <?php foreach ($registroProgramas as $programa) { ?>
-            <article class="program__item">
-              <div class="program__image-container">
-                <img
-                  src="<?php echo $programa->getImagen(); ?>"
-                  alt=""
-                  class="program__item-image" />
-              </div>
+            <a href="https://api.whatsapp.com/send?phone=+57<?php echo $registroConfiguracion->getTelefono() ?>&text=Hola, Quiero más información del Programa <?php echo $programa->getTitulo() ?>" target="_blank" class="program__link">
+              <article class="program__item">
+                <div class="program__image-container">
+                  <img
+                    src="<?php echo $programa->getImagen(); ?>"
+                    alt=""
+                    class="program__item-image" />
+                </div>
 
-              <h3 class="program__item-title"><?php echo $programa->getTitulo() ?></h3>
-              <p class="program__item-description">
-                <?php echo $programa->getDescripcion() ?>
-              </p>
-            </article>
+                <h3 class="program__item-title"><?php echo $programa->getTitulo() ?></h3>
+                <p class="program__item-description">
+                  <?php echo $programa->getDescripcion() ?>
+                </p>
+              </article>
+            </a>
           <?php } ?>
         </div>
       </div>
@@ -150,7 +152,7 @@
         <div class="footer__column">
           <h3 class="footer__title"><?php echo $registroConfiguracion->getNombreContacto() ?></h3>
           <p class="footer__contact"><?php echo $registroConfiguracion->getDireccion() ?></p>
-          <p class="footer__contact"><?php echo $registroConfiguracion->getTelefono() ?></p>
+          <p class="footer__contact"><a href="https://api.whatsapp.com/send?phone=<?php echo $registroConfiguracion->getTelefono() ?>&text=Hola, Quiero más información de los programas técnicos!" target="_blank"><?php echo $registroConfiguracion->getTelefono() ?></a></p>
           <p class="footer__contact"><?php echo $registroConfiguracion->getCorreo() ?></p>
         </div>
       </div>

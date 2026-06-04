@@ -45,15 +45,6 @@
                     <a class="nav-link" href="?controlador=paginas&accion=web">Página Web</a>
                 </li>
             </ul>
-            <form class="d-flex my-2 my-lg-0">
-                <input
-                    class="form-control me-sm-2"
-                    type="text"
-                    placeholder="buscar" />
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                    Aceptar
-                </button>
-            </form>
         </div>
     </nav>
     <?php include_once("config/ruteador.php") ?>
