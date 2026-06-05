@@ -189,8 +189,8 @@ class Configuracion
 
                 if (empty(trim($this->nombreInstitucion))) {
                         $this->errores['nombre_institucion'] = "El nombre de la institución es Obligatorio";
-                } elseif (mb_strlen(trim($this->nombreInstitucion)) < 20) {
-                        $this->errores['nombre_institucion'] = "El nombre de la institución debe tener como mínimo 20 carácteres";
+                } elseif (mb_strlen(trim($this->nombreInstitucion)) < 10) {
+                        $this->errores['nombre_institucion'] = "El nombre de la institución debe tener como mínimo 10 carácteres";
                 }
 
                 if (empty(trim($this->facebook))) {
@@ -244,8 +244,8 @@ class Configuracion
 
                 if (empty(trim($this->nombreContacto))) {
                         $this->errores['nombre_contacto'] = "El nombre del contacto es Obligatorio";
-                } elseif (mb_strlen(trim($this->nombreContacto)) < 20) {
-                        $this->errores['nombre_contacto'] = "El nombre del contacto debe tener como mínimo 20 carácteres";
+                } elseif (mb_strlen(trim($this->nombreContacto)) < 10) {
+                        $this->errores['nombre_contacto'] = "El nombre del contacto debe tener como mínimo 10 carácteres";
                 }
 
                 if (empty(trim($this->direccion))) {

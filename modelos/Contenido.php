@@ -84,8 +84,8 @@
 
                 if (empty(trim($this->titulo))) {
                         $this->errores['titulo'] = "El título es Obligatorio";
-                }elseif (mb_strlen(trim($this->titulo)) < 20) {
-                        $this->errores['titulo'] = "El título debe tener como mínimo 20 carácteres";
+                }elseif (mb_strlen(trim($this->titulo)) < 5) {
+                        $this->errores['titulo'] = "El título debe tener como mínimo 5 carácteres";
                 }
 
                 if (empty(trim($this->descripcion))) {
